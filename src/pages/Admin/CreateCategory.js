@@ -32,7 +32,6 @@ function CreateCategory() {
     const getAllCategory = async () => {
         // try {
         await axios.get("/api/v1/category/get-category").then((res) => {
-            // console.log(res.data)
             setCategories(res.data.category);
         }).catch((err) => {
             console.log(err.response)
