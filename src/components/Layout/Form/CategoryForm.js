@@ -13,7 +13,11 @@ function CategoryForm({ handleSubmit, value, setValue }) {
                         onChange={(e) => setValue(e.target.value)}
                     />
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+                    Submit
+                </button>
             </form>
         </>
     )
