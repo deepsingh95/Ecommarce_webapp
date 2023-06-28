@@ -18,10 +18,11 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('/api/v1/auth/login',
-                { email, password }
-            );
-            if (res && res.data.sucess) {
+            const res = await axios.post("/api/v1/auth/login", {
+                email,
+                password,
+            });
+            if (res && res.data.success) {
                 toast.success(res.data && res.data.message);
                 setAuth({
                     ...auth,
@@ -31,11 +32,11 @@ function Login() {
                 localStorage.setItem("auth", JSON.stringify(res.data));
                 navigate(location.state || "/");
             } else {
-                toast.error(res.data.message)
+                toast.error(res.data.message);
             }
         } catch (error) {
-            console.log(error)
-            toast.error("Something went wrong")
+            console.log(error);
+            toast.error("Something went wrong");
         }
     };
 
@@ -78,6 +79,6 @@ function Login() {
             </div>
         </Layout>
     )
-}
+};
 
-export default Login
+export default Login;
