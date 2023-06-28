@@ -20,7 +20,7 @@ function Register() {
             const res = await axios.post('/api/v1/auth/register',
                 { name, email, password, phone, address, answer }
             );
-            if (res.data.sucess) {
+            if (res.data.success) {
                 toast.success(res.data.message)
                 navigate("/login");
             } else {
