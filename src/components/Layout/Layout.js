@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { Helmet } from "react-helmet";
 // import { Toaster } from 'react-hot-toast';
-import '../../styles/AuthStyles.css'
+import '../../styles/AuthStyles.css';
 
 
 function Layout({ children, title, description, keywords, author }) {

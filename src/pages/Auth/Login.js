@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Layout from "./../../components/Layout/Layout";
 import { useNavigate, useLocation } from 'react-router-dom'
-// import toast from 'react-hot-toast';
 import { toast } from "react-toastify";
 import axios from 'axios';
 import { useAuth } from '../../context/auth';
+import "../../styles/AuthStyles.css";
 
 function Login() {
     const [email, setEmail] = useState("")
@@ -45,6 +45,7 @@ function Login() {
             <div className="form-container" style={{ minHeight: "90vh" }}>
                 <form onSubmit={handleSubmit}>
                     <h4 className="title">LOGIN FORM</h4>
+
                     <div className="mb-3">
                         <input
                             type="email"
@@ -56,6 +57,7 @@ function Login() {
                             required
                         />
                     </div>
+
                     <div className="mb-3">
                         <input
                             type="password"
@@ -67,11 +69,19 @@ function Login() {
                             required
                         />
                     </div>
+
                     <div className="mb-3">
-                        <button type="button" className="btn btn-primary" onClick={() => { navigate('/forgot-password') }}>
+                        <button
+                            type="button"
+                            className="btn btn-primary"
+                            onClick={() => {
+                                navigate('/forgot-password');
+                            }}
+                        >
                             Forgot Password
                         </button>
                     </div>
+
                     <button type="submit" className="btn btn-primary">
                         LOGIN
                     </button>

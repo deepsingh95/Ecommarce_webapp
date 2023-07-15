@@ -137,7 +137,7 @@ function Header() {
                 </div>
             </nav>
         </>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;
