@@ -3,6 +3,7 @@ import Layout from "./../../components/Layout/Layout";
 import { useNavigate } from 'react-router-dom'
 import { toast } from "react-toastify";
 import axios from 'axios';
+import "../../styles/AuthStyles.css";
 
 function ForgotPassword() {
     const [email, setEmail] = useState("")
@@ -31,9 +32,10 @@ function ForgotPassword() {
     };
     return (
         <Layout title={'Forgot Password - Ecommerce App'}>
-            <div className="form-container" style={{ minHeight: "90vh" }}>
+            <div className="form-container">
                 <form onSubmit={handleSubmit}>
                     <h4 className="title">RESET PASSWORD</h4>
+
                     <div className="mb-3">
                         <input
                             type="email"
@@ -45,6 +47,7 @@ function ForgotPassword() {
                             required
                         />
                     </div>
+
                     <div className="mb-3">
                         <input
                             type="text"
@@ -56,6 +59,7 @@ function ForgotPassword() {
                             required
                         />
                     </div>
+
                     <div className="mb-3">
                         <input
                             type="password"
@@ -67,6 +71,7 @@ function ForgotPassword() {
                             required
                         />
                     </div>
+
                     <button type="submit" className="btn btn-primary">
                         RESET
                     </button>

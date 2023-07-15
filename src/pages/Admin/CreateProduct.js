@@ -5,8 +5,7 @@ import { toast } from "react-toastify";
 import axios from 'axios';
 import { Select } from 'antd';
 import { useNavigate } from 'react-router-dom';
-
-const { Option } = Select
+const { Option } = Select;
 
 function CreateProduct() {
     const navigate = useNavigate();
@@ -23,7 +22,8 @@ function CreateProduct() {
     //get all category
     const getAllCategory = async () => {
         try {
-            const { data } = await axios.get("/api/v1/category/get-category");
+            const { data } = await axios.get(
+                "/api/v1/category/get-category");
             if (data?.success) {
                 setCategories(data?.category);
             }
@@ -48,7 +48,10 @@ function CreateProduct() {
             productData.append("quantity", quantity);
             productData.append("photo", photo);
             productData.append("category", category);
-            const { data } = axios.post("/api/v1/product/create-product", productData);
+            const { data } = axios.post(
+                "/api/v1/product/create-product",
+                productData
+            );
             if (data?.success) {
                 toast.error(data?.message);
             } else {
@@ -63,14 +66,13 @@ function CreateProduct() {
 
     return (
         <Layout title={'Dashboard - Create Product'}>
-            <div className="container-fluid m-3 p-3">
-
+            <div className="container-fluid m-3 p-3 dashboard">
                 <div className="row">
                     <div className="col-md-3">
                         <AdminMenu />
                     </div>
                     <div className="col-md-9">
-                        <h1>create Product</h1>
+                        <h1>Create Product</h1>
                         <div className="m-1 w-75">
                             <Select bordered={false}
                                 placeholder="Select a category"
@@ -149,6 +151,7 @@ function CreateProduct() {
                             <div className="mb-3">
                                 <Select
                                     bordered={false}
+                                    value={shipping}
                                     placeholder='Select Shipping'
                                     size='large'
                                     showSearch

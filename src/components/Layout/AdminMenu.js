@@ -23,6 +23,11 @@ function AdminMenu() {
                         Products
                     </NavLink>
                     <NavLink
+                        to="/dashboard/admin/orders"
+                        className="list-group-item list-group-item-action">
+                        Orders
+                    </NavLink>
+                    <NavLink
                         to="/dashboard/admin/users"
                         className="list-group-item list-group-item-action">
                         Users
@@ -30,7 +35,7 @@ function AdminMenu() {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default AdminMenu;

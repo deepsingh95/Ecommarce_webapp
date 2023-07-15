@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import UserMenu from "../../components/Layout/UserMenu";
 import Layout from "./../../components/Layout/Layout";
 import { useAuth } from "../../context/auth";
-// import toast from "react-hot-toast";
 import { toast } from 'react-toastify';
 import axios from "axios";
-const Profile = () => {
+
+function Profile() {
     //context
     const [auth, setAuth] = useAuth();
     //state
